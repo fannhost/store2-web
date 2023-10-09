@@ -1,0 +1,903 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- icon animated -->
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome-animation/0.0.8/font-awesome-animation.min.css" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="I Am Robot">
+  <meta name="author" content="Ikhsan-Dev">
+  <title>Ikhsan-Store</title>
+  <link rel="shortcut icon" href="https://i.imgur.com/0hRH1jU.png" type="image/x-icon">
+  <link href="https://inirey.github.io/lolhuman/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://inirey.github.io/lolhuman/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="https://inirey.github.io/lolhuman/css/default.css" rel="stylesheet">
+  <link href="https://inirey.github.io/lolhuman/css/style.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet"> 
+</head>
+<style>
+  .button {
+  --width: 100px;
+  --height: 35px;
+  --tooltip-height: 35px;
+  --tooltip-width: 90px;
+  --gap-between-tooltip-to-button: 18px;
+  --button-color: #ffffff00;
+  --tooltip-color: #fff;
+  width: var(--width);
+  height: var(--height);
+  background: var(--button-color);
+  position: relative;
+  text-align: center;
+  border-radius: 0.45em;
+  font-family: "Arial";
+  transition: background 0.3s;
+}
+
+.button::before {
+  position: absolute;
+  content: attr(data-tooltip);
+  width: var(--tooltip-width);
+  height: var(--tooltip-height);
+  background-color: var(--tooltip-color);
+  font-size: 0.9rem;
+  color: #111;
+  border-radius: .25em;
+  line-height: var(--tooltip-height);
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) + 10px);
+  left: calc(50% - var(--tooltip-width) / 2);
+}
+
+.button::after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border: 10px solid transparent;
+  border-top-color: var(--tooltip-color);
+  left: calc(50% - 10px);
+  bottom: calc(100% + var(--gap-between-tooltip-to-button) - 10px);
+}
+
+.button::after,.button::before {
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.5s;
+}
+
+.text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-wrapper,.text,.icon {
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  color: #fff;
+}
+
+.text {
+  top: 0
+}
+
+.text,.icon {
+  transition: top 0.5s;
+}
+
+.icon {
+  color: #fff;
+  top: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.button:hover {
+  background: #18ff80;
+}
+
+.button:hover .text {
+  top: -100%;
+}
+
+.button:hover .icon {
+  top: 0;
+}
+
+.button:hover:before,.button:hover:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.button:hover:after {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button) - 20px);
+}
+
+.button:hover:before {
+  bottom: calc(var(--height) + var(--gap-between-tooltip-to-button));
+}
+
+.name{
+  font-family: 'Press Start 2P', cursive;
+}
+</style>
+<body id="page-top" class="dark-mode">
+  <div id="wrapper">
+    <!-- Sidebar -->
+    <ul class="navbar-nav sidebar sidebar-light accordion" id="accordionSidebar">
+      <a class="sidebar-brand d-flex align-items-center justify-content-center" href="profile.html">
+        <i class="fa fa-smile-beam fa-2x"></i>
+        <div class="sidebar-brand-text mx-3">Ikhsan-Store</div>
+      </a>
+      <hr class="sidebar-divider my-0">
+      <li class="nav-item active">
+        <a class="nav-link" onclick="myFunction()">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Versions</span>
+        </a>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Produk
+      </div>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseDownload" aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="fa fa-duotone fa-robot"></i>
+          <span>BOT</span>
+        </a>
+        <div id="collapseDownload" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Bot <i class="fa fa-solid fa-tag"></i></h6>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=#botfixbuton"target="_blank">Bot Fix Button</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=#v1"target="_blank">Sc Panel Deposit</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=#v2"target="_blank">Sc Push Kontak</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=#v3"target="_blank">Sc Subdomain</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=#v4" target="_blank">Sc Create Webp</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=#v5" target="_blank">Sc Store</a>
+            <h6 class="collapse-header">Sewa BOT <i class="fa fa-solid fa-tag"></i></h6>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=#sewa"target="_blank">BOT IkhsanDev</a>
+            <a class="collapse-item" href="./views/bot.html">Read All <i class="fa fa-solid fa-tag"></i></a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#website"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="fa fa-solid fa-folder"></i>
+          <span>Template website</span>
+        </a>
+        <div id="website" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Template/Tema Website <i class="fa fa-solid fa-tag"></i></h6>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=hy" target="_blank">Ceou Dream</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=hy" target="_blank">Gaming Store</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=hy" target="_blank">Ikhsan-Dev</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=hy" target="_blank">Ikhsan-Dev</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=Assalamualaikum+bang+Mau+Digital+Cyber" target="_blank">Digital Cyber</a>
+            <a class="collapse-item" target="_blank" href="https://wa.me/6287846614391?text=Assalamualaikum+bang+Mau+Place+Market" target="_blank">Place Market</a>
+            <a class="collapse-item" href="./views/website.html">Read All <i class="fa fa-solid fa-tag"></i></a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#panel"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="fa fa-solid fa-envelope-open-text"></i>
+          <span>Panel</span>
+        </a>
+        <div id="panel" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Panel <i class="fa fa-solid fa-tag"></i></h6>
+            <a class="collapse-item" target="_blank" href="./views/undefined.html"target="_blank">RuzXD Store</a>
+            <a class="collapse-item" target="_blank" href="./views/undefined.html"target="_blank">Ikhsan-Dev</a>
+            <a class="collapse-item" href="./views/undefined.html">Read All <i class="fa fa-solid fa-tag"></i></a>
+          </div>
+        </div>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#topup"
+          aria-expanded="true" aria-controls="collapseBootstrap">
+          <i class="fa fa-regular fa-gem"></i>
+          <span>TopUp</span>
+        </a>
+        <div id="topup" class="collapse" aria-labelledby="headingBootstrap" data-parent="#accordionSidebar">
+          <div class="py-2 collapse-inner rounded">
+            <h6 class="collapse-header">Top Up <i class="fa fa-solid fa-tag"></i></h6>
+            <a class="collapse-item" target="_blank" href="./views/undefined.html"target="_blank">Free Fire</a>
+            <a class="collapse-item" target="_blank" href="./views/undefined.html"target="_blank">Mobile Legends</a>
+            <a class="collapse-item" target="_blank" href="./views/undefined.html"target="_blank">PUBG</a>
+            <a class="collapse-item" target="_blank" href="./views/undefined.html"target="_blank">Dana</a>
+            <a class="collapse-item" href="./views/undefined.html">Read All <i class="fa fa-solid fa-tag"></i></a>
+          </div>
+        </div>
+      </li>
+      <hr class="sidebar-divider">
+      <div class="sidebar-heading">
+        Contact
+      </div>
+      <li class="nav-item">
+        <a class="nav-link" href="https://wa.me/6287846614391?text=Assalamualaikum+bang">
+          <i class="fab fa-brands fa-whatsapp"></i>
+          <span>Whatsapp</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="https://wa.me/6287846614391?text=Assalamualaikum+bang">
+          <i class="fa fa-regular fa-address-card"></i>
+          <span>Service</span>
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="./views/game.html">
+          <i class="fa fa-solid fa-gamepad"></i>
+          <span>Game</span>
+        </a>
+      </li>
+      <hr class="sidebar-divider">
+      <li class="nav-item active">
+        <a class="nav-link" onclick="Ruztan()">
+          <i class="fas fa-exclamation-triangle"></i>
+          <span>Tentang Kami</span>
+        </a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="https://wa.me/6287846614391?text=Assalamualaikum+bang">
+          <i class="fas fa-download"></i>
+          <span>Buy Template Ini</span>
+        </a>
+      </li>
+    </ul>
+    <!-- Sidebar -->
+    <div id="content-wrapper" class="d-flex flex-column">
+      <div id="content">
+        <!-- TopBar -->
+        <nav class="navbar navbar-expand navbar-light bg-navbar topbar mb-4 static-top">
+          <button id="sidebarToggleTop" class="btn btn-link rounded-circle mr-3">
+            <i class="fa fa-bars"></i>
+          </button>
+          <ul class="navbar-nav ml-auto">
+            <div class="topbar-divider d-none d-sm-block"></div>
+            <li class="nav-item dropdown no-arrow">
+              </a>
+              <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
+                aria-labelledby="searchDropdown">
+              </div>
+            </li>
+            <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button" data-toggle="dropdown"
+                aria-haspopup="true" aria-expanded="false">
+                <i class="fas fa-bell fa-fw"></i>
+                <span class="badge badge-success badge-counter">2 </span>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+                <h6 class="dropdown-header bg-info-gradient">
+                  INFO CENTER
+                </h6>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-danger">
+                      <i class="fas fa-info-circle text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">May 05, 3085</div>
+                    <span style="font-size:12px;">INGIN SUKSES DI USIA MUDAH</span>
+                  </div>
+                </a>
+                <a class="dropdown-item d-flex align-items-center" href="#">
+                  <div class="mr-3">
+                    <div class="icon-circle bg-danger">
+                      <i class="fas fa-file-alt text-white"></i>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="small text-gray-500">Mei 31, 2005</div>
+                    <span style="font-size:14px;">Kelahiran IKHSANDEV</span>
+                  </div>
+                </a>
+              </div>
+            </li>
+
+             <li class="nav-item dropdown no-arrow mx-1">
+              <a class="nav-link dropdown-toggle" href="index.html">
+                <i class="fas fa-home"></i>
+              </a>
+              <div class="dropdown-list dropdown-menu dropdown-menu-right shadow animated--grow-in"
+                aria-labelledby="alertsDropdown">
+            </li>
+          </ul>
+        </nav>
+        <!-- Sidebar -->
+
+        <!-- Container Fluid-->
+        <div class="container-fluid" id="container-wrapper">
+          <div class="mb-4">
+            <div class="card-body" style="border-radius: 10px; background-color: rgb(132, 230, 255); color: white;">
+              <div class="row align-items-center">
+                <div class="col mr-2">
+                  <center>
+                    <h3 class="name" style="margin-bottom: 0;">Wellcome To Ikhsan-Dev Store <i class="fas fa-solid fa-store"></i></h3>
+                  </center>
+                </div>
+                <div class="col-auto">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row mb-3">
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(255, 252, 83);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">Total User: </div>
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">174 User</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-user faa-ring animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pending Requests Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(62, 242, 255);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">Total Donasi: </div>
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">IDR.0K</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fas fa-calendar faa-wrench animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(62, 255, 158);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">Cloud Server: </div>
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">800 GB</div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-cloud faa-ring animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(255, 81, 81);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">Waktu: </div>
+                      <div id="clock" class="name" style="color: white;"></div>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-clock faa-wrench animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <!--End-->
+          <h2 id="sc">Store SC BOT <i class="fa fa-solid fa-tag"></i></h2>
+          <div class="row mb-3">
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(200, 81, 255);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Bot Fix Button</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 20.000.00</div>
+                      <a href="https://wa.me/6287846614391?text=Assalamualaikum+bang+order+SC+Fix+Button">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-duotone fa-robot animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(255, 81, 226);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Sc Panel Deposit</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 25.000.00</div>
+                      <a href="https://wa.me/6287846614391?text=Assalamualaikum+bang+Mau+Sc+Create+Panel+Deposit">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-duotone fa-robot animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(81, 255, 81);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Sc Push Kontak</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 5.000.00</div>
+                      <a href="https://wa.me/6287846614391?text=Assalamualaikum+bang+Mau+Sc+Push+kontak">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-duotone fa-robot animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(81, 107, 255);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Sc Subdomain</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 35.000.00</div>
+                      <a href="https://wa.me/6287846614391?text=Assalamualaikum+bang+Mau+Beli+Sc+Subdomain">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-duotone fa-robot animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--End-->
+
+          <h2 id="temp">Jasa Install server panel <i class="fa fa-solid fa-tag"></i></h2>
+          <div class="row mb-3">
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(200, 81, 255);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Ram 2 </div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 20.000.00</div>
+                      <a href="https://wa.me/6287846614391?text=Assalamualaikum+bang+Mau+Instal+server+panel+ram+2">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-folder animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(255, 81, 226);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Ram 4</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 30.000.00</div>
+                      <a href="https://wa.me/6287846614391?text=Assalamualaikum+bang+Mau+Instal+server+panel+ram+4">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-folder animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(81, 255, 81);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Vps Ram 1</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 15.000.00</div>
+                      <a href="https://wa.me/6287846614391?text=Assalamualaikum+bang+Mau+Beli+Vps+Ram+2">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-folder animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(81, 107, 255);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Nomor Owner Ku</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 000.00</div>
+                      <a href="https://wa.me/6287846614391?text=Hy">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-folder animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(217, 255, 81);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Nomor Owner</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 000.00</div>
+                      <a href="https://wa.me/6287846614391?text=hy">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-folder animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(176, 136, 250);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Nomor Owner</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 000.00</div>
+                      <a href="https://wa.me/6287846614391?text=hy">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-folder animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--END-->
+
+          <h2 id="sewa">Sewa BOT GRUP <i class="fa fa-solid fa-tag"></i></h2>
+          <div class="row mb-3">
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(200, 81, 255);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">BOT MULTI FUNGSI</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 10.000/Bulan</div>
+                      <a href="https://wa.me/6287846614391?text=Assalamualaikum+bang+Mau+Sewa+Bot">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-duotone fa-robot animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--End-->
+
+          <h2 id="panel">Sewa Panel By Ikhsan-Dev <i class="fa fa-solid fa-tag"></i></h2>
+          <div class="row mb-3">
+            <!-- Earnings (Annual) Card Example -->
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(200, 81, 255);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Panel Ram 1</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 2.000 / Bulan</div>
+                      <a href="./views/undefined.html">
+                      <div class="button" data-tooltip="Info lengkap">
+                        <div class="button-wrapper">
+                          <div class="text">Click me!</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-envelope-open-text animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+                  <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(0, 255, 9, 1);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Panel Ram 10</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 5.000.00</div>
+                      <a href="https://wa.me/6287846614391?text=hai+kak+mau+beli+panel+ram+10">
+                      <div class="button" data-tooltip="Buy Di Owner">
+                        <div class="button-wrapper">
+                          <div class="text">Klik ini</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-folder animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6 mb-4">
+              <div>
+                <div class="card-body" style="border-radius: 10px; background-color: rgb(81, 243, 255);">
+                  <div class="row no-gutters align-items-center">
+                    <div class="col mr-2">
+                      <div class="h5 mb-0 font-weight-bold name" style="color: white;">Panel Ram unlimited</div>
+                      <div class="text-xs font-weight-bold text-uppercase mb-1" style="color: white;">IDR 10.000 / Bulan</div>
+                      <a href="./views/undefined.html">
+                      <div class="button" data-tooltip="Info lengkap">
+                        <div class="button-wrapper">
+                          <div class="text">Click me!</div>
+                            <span class="icon">
+                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
+                                <path d="M253.3 35.1c6.1-11.8 1.5-26.3-10.2-32.4s-26.3-1.5-32.4 10.2L117.6 192H32c-17.7 0-32 14.3-32 32s14.3 32 32 32L83.9 463.5C91 492 116.6 512 146 512H430c29.4 0 55-20 62.1-48.5L544 256c17.7 0 32-14.3 32-32s-14.3-32-32-32H458.4L365.3 12.9C359.2 1.2 344.7-3.4 332.9 2.7s-16.3 20.6-10.2 32.4L404.3 192H171.7L253.3 35.1zM192 304v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16zm96-16c8.8 0 16 7.2 16 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16zm128 16v96c0 8.8-7.2 16-16 16s-16-7.2-16-16V304c0-8.8 7.2-16 16-16s16 7.2 16 16z"/>
+                              </svg>
+                            </span>
+                          </div>
+                        </div>
+                      </a>
+                    </div>
+                    <div class="col-auto">
+                      <i class="fa fa-solid fa-envelope-open-text animated fa-2x" style="color: black;"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <!--End-->
+          
+          <!--Row-->
+          <div class="row">
+            <div class="col-lg-12 text-center">
+              WOEY BRO DONASI GUA LAH :)
+              <p>
+                <a href="/" class="btn btn-primary btn-sm mr-2" target="_blank"><i
+                    class="fa fa-fw fa-wallet"></i>&nbsp;Trakteer</a>
+                <a href="/" class="btn btn-primary btn-sm ml-2" target="_blank"><i
+                    class="fab fa-fw fa-paypal"></i>&nbsp;Saweria</a>
+              </p>
+            </div>
+          </div>
+        </div>
+        <!---Container Fluid-->
+      </div>
+      <!-- creditnya bang jangan di apus:) -->
+      <footer class="sticky-footer">
+        <script>
+          document.write(unescape('%3Cdiv%20class%3D%22container%20my-auto%22%3E%0A%20%20%20%20%20%20%20%20%20%20%3Cdiv%20class%3D%22copyright%20text-center%20my-auto%22%3E%0A%20%20%20%20%20%20%20%20%20%20%20%20Made%20with%20%3Ci%20class%3D%22fa%20fa-heart%20faa-flash%20animated%22%3E%3C/i%3E%20by%0A%20%20%20%20%20%20%20%20%20%20%20%20%3Ca%20href%3D%22https%3A//qr.danuy-coder.repl.co%22%20target%3D%22_blank%22%20style%3D%22color%3A%20%23fff%3B%22%3EDanz%20WibuSoft%3C/a%3E%20Versions%202.0.3%0A%20%20%20%20%20%20%20%20%20%20%20%20%3C/span%3E%0A%20%20%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%20%20%3C/div%3E%0A%20%20%20%20%20%20%3C/footer%3E'))
+        </script>
+          
+          
+      <!-- Footer -->
+    </div>
+  </div>
+
+  <!-- Scroll to top -->
+  <a class="scroll-to-top rounded" href="#page-top">
+    <i class="fas fa-angle-up"></i>
+  </a>
+
+  <script src="https://inirey.github.io/lolhuman/vendor/jquery/jquery.min.js"></script>
+  <script src="https://inirey.github.io/lolhuman/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="https://inirey.github.io/lolhuman/vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="https://inirey.github.io/lolhuman/js/ruang-admin.min.js"></script>
+  <script>
+		function showTime() {
+			var date = new Date();
+			var h = date.getHours();
+			var m = date.getMinutes();
+			/*var s = date.getSeconds();*/
+			var session = "AM";
+
+			if (h == 0) {
+				h = 12;
+			}
+
+			if (h > 12) {
+				h = h - 12;
+				session = "PM";
+			}
+
+			h = (h < 10) ? "0" + h : h;
+			m = (m < 10) ? "0" + m : m;
+			/*s = (s < 10) ? "0" + s : s;*/
+
+			var time = h + ":" + m + ":" + session;
+			document.getElementById("clock").innerText = time;
+			document.getElementById("clock").textContent = time;
+
+			setTimeout(showTime, 1000);
+		}
+
+		showTime();
+
+    function myFunction() {
+      alert("Versions 2.0.3");
+    }
+
+    function Ruztan() {
+      alert("Gua Authornya \nGua Devnya \nGua Ownernya \n\nSolo Coding Bro:)");
+    }
+	</script>
+</body>
+
+</html>
